@@ -1,8 +1,8 @@
 var update = setInterval(function() {draw()}, 1);
 
 var UUMatterTotal = 0;
-var billion = "1000000000";
-var million = "1000000";
+var billion = 1000000000;
+var million = 1000000;
 var billionString = "1 000 000 000 mB";
 var percentage = 0;
 
@@ -46,7 +46,7 @@ function draw() {
 
     UUMatterTotal += 100000;
     console.log("Total UU-Matter Produced: " + UUMatterTotal);
-    percentage = (UUMatterTotal / million * 10);
+    percentage = (UUMatterTotal / billion) * 100;
     console.log("Percentage: " + percentage);
 
     ctx.font = "30px Arial";
@@ -62,6 +62,6 @@ function draw() {
 
     ctx.fillStyle = "black";
     ctx.fillText(UUMatterTotal + " / " + billionString, (width / 2) - 60, (height / 2) + 10);
-    ctx.fillText(percentage.toFixed(4) + " %",20, height / 2 + 10);
+    ctx.fillText(percentage.toFixed(2) + " %",20, height / 2 + 10);
 };
 
